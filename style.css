@@ -1,0 +1,112 @@
+
+:root{
+    --size: 50px;
+}
+
+html{
+    width: 10px;
+    height: 30px;
+}
+
+#square, #circle{
+    width: var(--size);
+    height: var(--size); 
+
+    background-color: rgb(0, 0, 0);
+    border-width: 0px;
+    transition: 1s;
+}
+
+#square{
+    position: absolute;
+    top: calc(60% - var(--size)/2);
+    left: calc(50% - var(--size)/2);
+}
+
+#square:hover{
+    background: red;
+    transform: rotateZ(45deg) 
+ 
+}
+
+#square:focus{
+    width: 0px;
+    height: 0px;
+
+    padding: 0px;
+    border-width: calc(var(--size)/2);
+    border-left-color: rgb(255, 136, 0);
+    border-right-color: rgb(0, 255, 0);
+    border-top-color: rgb(0, 89, 255);
+    border-bottom-color: rgb(255, 0, 128);
+}
+
+#circle{
+    position: absolute;
+    top: calc(50% - var(--size)/2);
+    left: calc(50% - var(--size)/2);
+    border-radius: calc(var(--size)/2);
+}
+
+#circle:hover{
+    background: red;
+    transform: rotateY(180deg);
+}
+
+#circle:focus{
+    transform: rotateY(180deg);
+    animation: growUp 1s;
+    animation-iteration-count: infinite;
+}
+
+#rotateCenter{
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    top: 40%;
+    left: 40%;
+    animation: rotate 2s;
+    z-index: -1;
+    background-color: rgba(255, 255, 255, 0);
+    animation-iteration-count: infinite;
+    animation-timing-function:ease;
+}
+
+#triangle{
+    width: 0;
+    height: 0;
+    position: fixed;
+    top: calc(160% - var(--size)/2);
+    left: calc(50% - var(--size)/2);
+    border-left: calc(var(--size)/2) solid transparent;
+    border-right: calc(var(--size)/2) solid transparent;
+    border-bottom: var(--size) solid rgb(0, 0, 0);
+}
+
+#triangle:hover{
+    border-bottom-color: red;
+}
+
+@keyframes growUp{
+    0%{
+        background: red;
+        transform: scale(1)
+    }
+    50%{
+        background-color: black;
+        transform: scale(1.25)
+    }
+    100%{
+        background: red;
+        transform: scale(1)
+    }
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0turn)
+    }
+    100%{
+        transform: rotate(1turn)
+    }
+}

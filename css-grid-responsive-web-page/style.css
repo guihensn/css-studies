@@ -1,0 +1,75 @@
+html{
+    height: 100%;
+}
+
+body{ 
+    display: grid;
+    height: 100%;
+
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-areas: 'header header logo'
+                         'options images ads'
+                         'links phrase phrase';
+    gap: 5px;
+    text-align: center;
+    font-family: OCR A Std, monospace;
+    font-size: 1em;
+    color: white;
+}
+
+body > div{
+    padding: 10px;
+}
+
+#header{
+    grid-area: header;
+    background-color: #69b578ff;
+}
+
+#logo{
+    grid-area: logo;
+    background-color: #95e4cbff;
+}
+
+#options{
+    grid-area: options;
+    background-color: #5f5449ff;
+}
+
+#images{
+    grid-area: images;
+    background-color:  #aae4c5ff;
+}
+
+#ads{
+    grid-area: ads;
+    background-color: #5f5449ff;
+}
+
+#links{
+    grid-area: links;
+    background-color: #95e4cbff;
+}
+
+#phrase{
+    grid-area: phrase;
+    background-color: #69b578ff;
+}
+
+@media only screen and (max-device-width: 600px) {
+    body{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 4fr 1fr 1fr;
+        grid-template-areas: 'logo' 
+                            'header'
+                            'options' 
+                            'images' 
+                            'phrase' 
+                            'ads'
+                            'links'
+                            ;
+        gap: 0;
+    }
+}
+

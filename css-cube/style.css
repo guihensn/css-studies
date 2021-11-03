@@ -1,0 +1,64 @@
+body{
+    display: flex;
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#camera{
+    perspective-origin: 0px -30px;
+    perspective: 20cm;
+}
+
+
+#cube{
+    transform: 0px;
+    transform-style: preserve-3d;
+    width: 200px;
+    height: 200px;
+    transition: 5s;
+ 
+}
+
+#cube:hover{
+    transform: rotateY(360deg) rotateX(360deg);
+}
+
+#top, #bottom, #left, #right, #front, #back{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+}
+
+#top{
+    transform: translateY(-50%) rotateX(90deg) ;
+}
+
+#bottom{
+    transform: translateY(50%) rotateX(90deg) ;
+}
+
+#left{
+    transform: translateX(-50%) rotateY(90deg) ;
+}
+
+#right{
+    transform: translateX(50%) rotateY(+90deg) ;
+}
+
+#front{
+    transform: translateZ(100px);
+    background-color: rgb(0, 0, 0);
+}
+
+#back{
+    transform: translateZ( -100px);
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}

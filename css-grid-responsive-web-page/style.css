@@ -38,8 +38,23 @@ body > div{
 }
 
 #images{
+    height: 100%;
     grid-area: images;
     background-color:  #aae4c5ff;
+}
+
+#images-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    overflow: visible;
+}
+
+
+#images-grid > div{
+    height: 100px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: cadetblue;
 }
 
 #ads{

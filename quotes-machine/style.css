@@ -59,7 +59,7 @@ img{
     border-radius: calc(var(--size));
     border-style: double;
 
-    cursor:
+    cursor:pointer;
 
 }
 

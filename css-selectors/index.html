@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        :root{
+            --distanceX: 10px;
+            --distanceY: 10px;
+        }
+        
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            gap:20px
+        }
+
+        button{
+            width: 200px;
+        }
+        
+        .blocks {
+            display: flex;
+            justify-content: center;
+        }
+
+        .blocks div {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(60, 194, 194);
+        }
+
+        #button-translate:hover ~ .blocks div:nth-child(2n+1) {
+            transform: translateX(20px);
+        }
+
+        #button-rotate:hover ~ .blocks div:nth-child(2n+2) {
+            transform: rotate(90deg);
+        }
+
+        #button-move:hover ~ .blocks div{
+            animation: translate 1s alternate infinite;
+  
+        }
+
+        @keyframes translate{
+            from{}
+            to{transform: translate(var(--distanceX),var(--distanceY));}
+        }
+
+        .blocks div:nth-child(3n+1){
+            --distanceX : 30px;
+            --distanceY : -60px;
+            background-color: aquamarine;
+        }
+
+        .blocks div:nth-child(3n+2){   
+            --distanceX : -30px;
+            --distanceY : 60px;
+        }
+
+        .blocks div:hover {
+            transform: translateX(10px);
+        }
+
+        .blocks div::before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            width: 10px;
+            background-color: rgb(61, 74, 255);
+            box-shadow: inset 0px 0px 5px black;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="button-move">Move</button>
+    <button id="button-translate">Translate</button>
+    <button id="button-rotate">Rotate</button>
+
+    <div class="blocks translate">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="other-divs">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>

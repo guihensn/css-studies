@@ -1,0 +1,63 @@
+.container {
+  width: 500px;
+  height: 500px;
+  background-color: #2a96db;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .child-blue {
+  width: 200px;
+  height: 200px;
+  background-color: #ae3618;
+  background-color: blue;
+}
+
+.container .child-red {
+  width: 100px;
+  height: 100px;
+  background-color: #3be88c;
+  background-color: red;
+}
+
+.container :hover {
+  background-color: black;
+}
+
+p:nth-child(1) {
+  font-size: 10px;
+}
+
+p:nth-child(2) {
+  font-size: 20px;
+}
+
+p:nth-child(3) {
+  font-size: 30px;
+}
+
+p:nth-child(4) {
+  font-size: 40px;
+}
+
+p:nth-child(5) {
+  font-size: 50px;
+}
+
+p:nth-child(6) {
+  font-size: 60px;
+}
+
+p:nth-child(7) {
+  font-size: 70px;
+}
+
+p:nth-child(8) {
+  font-size: 80px;
+}
+
+p:nth-child(9) {
+  font-size: 90px;
+}
+/*# sourceMappingURL=style.css.map */

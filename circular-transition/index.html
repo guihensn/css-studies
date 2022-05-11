@@ -1,0 +1,40 @@
+<style>
+     :root {
+        --visiblePercentage: 0%;
+        --ousideColor: black;
+        --insideColor: rgba(0, 0, 0, 0);
+        
+        background: radial-gradient( 
+            circle,
+            var(--insideColor) var(--visiblePercentage), 
+            var(--ousideColor) var(--visiblePercentage));
+    }
+</style>
+
+<script>
+    
+    function screenTransite(duration, gap){
+        
+        let visiblePercentage = 0;
+           
+        let interval = setInterval(()=>{
+            visiblePercentage += gap;
+
+            changeStatus(visiblePercentage, 'black','transparent');
+
+            if(visiblePercentage == 100){
+                clearInterval(interval);
+            }
+        },duration * gap/ 100);
+    };
+
+    function changeStatus(insideColorPercentage, ousideColor, insideColor){
+        root = document.documentElement;
+
+        root.setAttribute('style', `--ousideColor:${ousideColor}`);
+        root.setAttribute('style', `--insideColor:${insideColor}`);
+        root.setAttribute('style', `--visiblePercentage: ${insideColorPercentage}%`);
+    }
+    
+    screenTransite(1000, 10)
+</script>
